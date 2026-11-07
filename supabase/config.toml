@@ -1,0 +1,23 @@
+project_id = "heeszqbyxflgfecznzmr"
+
+[functions.exile-chat]
+verify_jwt = false
+
+[functions.home-proxy]
+verify_jwt = false
+
+[functions.car-proxy]
+verify_jwt = false
+
+[functions.exile-image]
+verify_jwt = false
+
+[functions.exile-analyze]
+verify_jwt = false
+
+[functions.exile-phone]
+verify_jwt = false
+
+[functions.exile-health]
+verify_jwt = false
+

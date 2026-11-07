@@ -1,0 +1,254 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@keyframes exile-breathe {
+  0%, 100% { opacity: 0.75; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+
+@keyframes exile-scan {
+  0% { transform: translateY(-46%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(46%); opacity: 0; }
+}
+
+/* Installed-app safe areas (notches, home indicator) */
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+body {
+  padding: 0;
+  overscroll-behavior: none;
+}
+
+      body {
+        background-color: #030712;
+        color: #e2e8f0;
+      }
+
+
+/* INDI AI CINEMATIC MOTION SYSTEM */
+:root {
+  --exile-motion-fast: 160ms;
+  --exile-motion-normal: 240ms;
+  --exile-motion-panel: 320ms;
+  --exile-motion-ease: cubic-bezier(0.2, 0.75, 0.25, 1);
+  --exile-motion-emphasis: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes exile-message-enter {
+  from { opacity: 0; transform: translate3d(0, 9px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@keyframes exile-panel-enter {
+  from { opacity: 0; transform: translate3d(0, 12px, 0) scale(0.99); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+@keyframes exile-core-idle {
+  0%, 100% { filter: drop-shadow(0 0 5px rgba(56,189,248,0.18)); }
+  50% { filter: drop-shadow(0 0 12px rgba(56,189,248,0.34)); }
+}
+
+@keyframes exile-core-thinking {
+  0%, 100% { filter: drop-shadow(0 0 7px rgba(56,189,248,0.25)); }
+  50% { filter: drop-shadow(0 0 17px rgba(56,189,248,0.52)); }
+}
+
+.exile-message-enter {
+  animation: exile-message-enter 260ms var(--exile-motion-emphasis) both;
+}
+
+.exile-panel-enter {
+  animation: exile-panel-enter var(--exile-motion-panel) var(--exile-motion-emphasis) both;
+}
+
+.exile-control {
+  transition:
+    color var(--exile-motion-fast) ease,
+    background-color var(--exile-motion-fast) ease,
+    border-color var(--exile-motion-fast) ease,
+    box-shadow var(--exile-motion-normal) ease,
+    transform var(--exile-motion-fast) var(--exile-motion-ease);
+}
+
+.exile-control:hover {
+  transform: translateY(-1px);
+}
+
+.exile-control:active {
+  transform: translateY(0) scale(0.985);
+}
+
+.exile-control:focus-visible {
+  outline: 2px solid rgba(103, 232, 249, 0.8);
+  outline-offset: 3px;
+}
+
+.exile-reactor[data-state="idle"] svg {
+  animation: exile-core-idle 3.2s ease-in-out infinite;
+}
+
+.exile-reactor[data-state="thinking"] svg {
+  animation: exile-core-thinking 1.8s ease-in-out infinite;
+}
+
+.exile-reactor[data-state="listening"] svg,
+.exile-reactor[data-state="speaking"] svg {
+  filter: drop-shadow(0 0 13px rgba(56,189,248,0.42));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .exile-control:hover,
+  .exile-control:active {
+    transform: none;
+  }
+
+  .exile-message-enter,
+  .exile-panel-enter {
+    animation: none;
+  }
+}
+
+/* ---- Mobile responsiveness ---- */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+/* iOS Safari zooms the page when a focused field uses text smaller than 16px. */
+@media (max-width: 767px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]):not([type="color"]),
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
